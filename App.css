@@ -1,1 +1,566 @@
+/*Global app styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #FFFFF0;
+}
+
+/*Navigation bar styling*/
+.nav{
+  background-color: transparent;
+  height: 100px;
+  margin: 32px 128px 32px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius:  0 25px 25px 0;
+}
+
+.home, .about, .projects, .contact{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 32px;
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.home:hover, .about:hover, .projects:hover, .contact:hover{
+  transform: scale(1.2);
+}
+
+.navBtn{
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  margin: 32px 16px 0 16px;
+  font-size: 72px;
+  color: #000;
+  cursor: pointer;
+}
+
+/*Main Hero styling*/
+.hero{
+  height: 800px;
+  width: 100%;
+  margin: 0 0 32px 0;
+  background: #e1e1e1;
+  display: grid;
+  grid-template-areas:
+    "title heroPic"
+    "description heroPic"
+    "description contactBtns";
+  grid-template-columns: auto 650px; 
+  grid-template-rows: 200px 300px; 
+  border-top: double #b4b4b4;
+  border-bottom: double #b4b4b4;
+}
+
+.title, .description, .heroPic, .contactBtns {
+  border-radius: 20px;
+  margin: 32px;
+  padding: 16px;
+}
+
+.title {
+  grid-area: title;
+}
+
+.heroPic {
+  grid-area: heroPic;
+}
+
+.contactBtns {
+  grid-area: contactBtns;
+}
+
+.description {
+  grid-area: description;
+}
+
+.name{
+  background: linear-gradient(to right, #2b5dff, #2b80ff, #2bbfff);
+  background-clip: text;
+  color: transparent;
+  font-size: 64px;
+}
+
+.titleTxt{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 48px;
+  cursor: default;
+}
+
+.heroText{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+  cursor: default;
+}
+
+.cv, .contactLink{
+  margin-right: 32px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #FFFFF0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: none;
+  font-size: 48px;
+  transition: 1s;
+  cursor: pointer;
+  border: solid 2px grey;
+}
+
+.contactBtns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.cv:hover, .contactLink:hover{
+  transform: scale(1.1);
+  background: linear-gradient(to right, #2b5dff, #2b80ff, #2bbfff);
+  color: #fff;
+}
+
+/*Slideshow styling*/
+.slideshowImg{
+  height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshowImg.active {
+  opacity: 1;
+}
+
+.heroPic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Popups styling*/
+
+.cvPopup{
+  position: absolute;
+  top: 25%;
+  right: 30%;
+  height: 600px;
+  width: 600px;
+  border-radius: 25px;
+  background: #fff;
+  border: double 5px #b4b4b4;
+  overflow: scroll;
+  padding: 8px;
+  scrollbar-width: none;
+}
+
+.cvPopupCloseBtn{
+  float: right;
+  font-size: 65px;
+  padding-bottom: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+.cvTitle {
+  font-size: 48px;
+  margin: 8px 0 8px 0;
+  border-bottom: solid 1px #000;
+}
+
+.cvContactTitle, .cvEducationTitle, .cvTechSkillsTitle, .projectsTitle, .employmentTitle{
+  font-size: 24px;
+  margin: 8px 0 8px 0;
+  cursor: default;
+}
+
+.cvEducationSubHeading, .cvTechSkillsSubHeading, .projectSubHeading, .employmentSubHeading{
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 0 8px 0;
+  cursor: default;
+}
+
+.cvIcons{
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+.cvTitle{
+  cursor: default;
+}
+
+.cvContactDetails{
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: solid 1px #000 ;
+}
+
+.cvEducationDetailsB, .cvTechSkillDetailsB, .projectDetailsB, .employmentDetailsB{
+  border-bottom: solid 1px #000 ;
+  cursor: default;
+}
+
+.cvEducationDetails, .cvTechSkillDetails, .projectDetails, .employmentDetails{
+  cursor: default;
+}
+
+
+.popup{
+  position: absolute;
+  top: 25%;
+  right: 30%;
+  height: 600px;
+  width: 600px;
+  border-radius: 25px;
+  background: #fff;
+  border: double 5px #b4b4b4;
+}
+
+.popupCloseBtn{
+  float: right;
+  font-size: 80px;
+  padding: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+.popuplinks{
+  font-size: 80px;
+  display: grid;
+  grid-template-areas: 
+        "email phone"
+        "linkedin github";
+  grid-template-columns: 320px;
+  grid-template-rows: 330px ;
+  padding: 96px;
+}
+
+.emailIcon{
+  grid-area: email;
+}
+
+.phoneIcon{
+  grid-area: phone;
+}
+
+.LinkedinIcon{
+  grid-area: linkedin;
+}
+
+.GithubIcon{
+  grid-area: github;
+}
+
+a{
+  color: #000;
+  text-decoration: none; 
+}
+
+.emailIcon:hover, .phoneIcon:hover, .LinkedinIcon:hover, .GithubIcon:hover{
+  cursor: pointer;
+  animation: shaking 1s infinite;
+  text-decoration: none;
+}
+
+.aboutHero{
+  height: 800px;
+  width: 100%;
+  margin: 0 0 32px 0;
+  background: #e1e1e1;
+  background: #e1e1e1;
+  border-top: double #b4b4b4;
+  border-bottom: double #b4b4b4;
+  display: grid;
+  grid-template-areas: 
+      "profile code"
+      "work cvbtns";
+      grid-template-columns: 50%;
+      grid-template-rows: auto 300px;
+      
+}
+
+.personalProfile, .workHistory, .cvBtns, .codeBase{
+  margin: 32px 32px 0px 32px;
+}
+
+.personalProfile{
+  grid-area: profile;
+}
+
+.workHistory{
+  grid-area: work;
+}
+
+.cvBtns{
+  grid-area: cvbtns;
+  display: flex;
+  align-items: start;
+  justify-content: space-evenly;
+}
+
+.viewCvBtn, .downloadCvBtn{
+  font-size: 40px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 32px 32px 0 0;
+  padding: 16px;
+  background: #FFFFF0;
+  border-radius: 20px;
+  border: solid 2px grey;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.viewCvBtn:hover, .downloadCvBtn:hover{
+  transform: scale(1.1);
+  background: linear-gradient(to right, #2b5dff, #2b80ff, #2bbfff);
+  color: #fff;
+}
+
+.ppTitle{
+  font-size: 48px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.ppText{
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 16px 0 0 0;
+}
+
+.codeBase{
+  grid-area: code;
+  display: grid;
+  grid-template-areas:
+      "codetitle codetitle codetitle"
+      "codetext codetext codetext"
+      "codelang framework devtool";
+  grid-template-columns: auto ;
+  grid-template-rows: auto;
+}
+
+.codeBaseTitle{
+  grid-area: codetitle;
+  display: flex;
+  font-size: 48px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.codeText{
+  grid-area: codetext;
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}  
+
+.languageIcons{
+  grid-area: codelang;
+} 
+
+.frameworkIcons{
+  grid-area: framework;
+} 
+
+.devTools{
+  grid-area: devtool;
+}
+
+.TitleHighlights{
+  margin: 0 10px 0 10px;
+  background: linear-gradient(to right, #2b5dff, #2b80ff, #2bbfff);
+  background-clip: text;
+  color: transparent;
+}
+
+.icons{
+  font-size: 40px;
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.languageIcons, .frameworkIcons, .devTools{
+  font-size: 32px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.workTitle{
+  font-size: 48px;
+  margin: 0 0 16px 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.workText{
+  font-size: 24px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.projectsHero {
+  height: 800px;
+  width: 100%;
+  margin: 0 0 32px 0;
+  background: #e1e1e1;
+  padding: 16px;
+  place-items: center; 
+  border-top: double #b4b4b4;
+  border-bottom: double #b4b4b4;
+
+}
+
+.projectimgbody{
+  display: grid;
+  grid-template-areas: 
+        "left center right";
+  grid-template-columns: auto 600px auto;
+  justify-content: center; 
+}
+
+.projectsImagesLeft{
+  margin-top: 128px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.projectsImagesRight{
+  margin-top: 128px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+
+.projectsCenter{
+  margin: 32px 0 0 0;
+  grid-area: center;
+  text-align: center;
+ 
+}
+
+.projectHeroTitle{
+  font-size: 48px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 64px 0 0 0;
+  cursor: default;
+}
+
+.projectHeroText{
+  font-size: 32px;
+  padding: 48px 16px 16px 16px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: default;
+}
+
+.projectGithubIcon{
+  font-size: 160px;
+  margin: 64px 0 0 0;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.projectGithubIcon:hover{
+  animation: shaking 1s infinite;
+  color: #2b5dff;
+}
+
+.projectimg{
+  display: grid;
+  height: 250px;
+  width: 290px;
+  border-radius: 20px;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.projectimg:hover{
+  transform: scale(1.1);
+}
+
+.contactHero{
+  height: 800px;
+  width: 100%;
+  margin: 0 0 32px 0;
+  background: #e1e1e1;
+  padding: 16px;
+  border-top: double #b4b4b4;
+  border-bottom: double #b4b4b4;
+  display: grid;
+  grid-template-areas: "left right";
+  grid-template-columns:55% auto;
+  padding-left: 600px;
+}
+
+.contactTitle{
+  
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0px 0 32px 16px;
+}
+
+.contactText{
+  font-size: 48px;
+  padding: 32px 0 0 16px;
+
+}
+
+.liContact, .eContact, .mContact, .ghContact{
+  font-size: 48px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 16px 0 70px 16px;
+}
+
+.contactIcons{
+  display: flex;
+  flex-direction: column;
+  padding-top: 148px;
+}
+
+
+.emailIconContact, .phoneIconContact, .LinkedinIconContact, .GithubIconContact{
+  padding: 0 32px 0x ;
+  margin-bottom: 32px;
+  font-size: 100px;
+  transition: 1s;
+}
+
+.emailIconContact:hover, .phoneIconContact:hover, .LinkedinIconContact:hover, .GithubIconContact:hover{
+  animation: shaking 1s infinite;
+  color: #2b5dff;
+}
+
+.contactLeft{
+  display: grid;
+  grid-area: left;
+ 
+}
+
+.contactRight{
+  display: grid;
+  grid-area: right;
+  
+}
+
+
+/*Keyframe animations*/
+@keyframes shaking {
+  0% { transform: translateX(0) }
+  25% { transform: translateY(-9px) }
+  35% { transform: translateY(-9px) rotate(5deg) }
+  55% { transform: translateY(-9px) rotate(-5deg) }
+  65% { transform: translateY(-9px) rotate(5deg) }
+  75% { transform: translateY(-9px) rotate(-5deg) }
+  100% { transform: translateY(0) rotate(0) }
+}
 
